@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+    <!--━━━━━━神兽出没━━━━━━-->
+    <!--　　　┏┓　　　┏┓-->
+    <!--　　┏┛┻━━━┛┻┓-->
+    <!--　　┃　　　　　　　┃-->
+    <!--　　┃　　　━　　　┃-->
+    <!--　　┃　┳┛　┗┳　┃-->
+    <!--　　┃　　　　　　　┃-->
+    <!--　　┃　　　┻　　　┃-->
+    <!--　　┃　　　　　　　┃-->
+    <!--　　┗━┓　　　┏━┛-->
+    <!--　　　　┃　　　┃神兽保佑, 永无BUG!-->
+    <!--　　　　┃　　　┃Code is far away from bug with the animal protecting-->
+    <!--　　　　┃　　　┗━━━┓-->
+    <!--　　　　┃　　　　　　　┣┓-->
+    <!--　　　　┃　　　　　　　┏┛-->
+    <!--　　　　┗┓┓┏━┳┓┏┛-->
+    <!--　　　　　┃┫┫　┃┫┫-->
+    <!--　　　　　┗┻┛　┗┻┛-->
+    <!--━━━━━━感觉萌萌哒━━━━━━-->
+
+    <appender name="CONSOLE" class="org.apache.log4j.ConsoleAppender">
+        <param name="Encoding" value="UTF-8"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d [%11p] - %35.35c.%15.15M %5L %m%n"/>
+        </layout>
+    </appender>
+
+    <appender name="FILE" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="Append" value="true"/>
+        <param name="file" value="${pb-member-credit-api.log.path}/pb-member-credit-api.log"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d [%5p] - %m%n"/>
+        </layout>
+    </appender>
+
+    <appender name="BIGLOG_APPENDER" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="Append" value="true"/>
+        <param name="file" value="${pb-member-credit-api.log.path}/biglog.log"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%m"/>
+        </layout>
+    </appender>
+    <logger name="BIGLOG" additivity="false">
+        <appender-ref ref="BIGLOG_APPENDER" />
+        <appender-ref ref="CONSOLE"/>
+    </logger>
+    <root>
+        <priority value="${pb-member-credit-api.log.level}"/>
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="FILE"/>
+    </root>
+</log4j:configuration>

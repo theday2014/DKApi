@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+           http://www.springframework.org/schema/aop
+           http://www.springframework.org/schema/aop/spring-aop-3.2.xsd">
+
+
+    <bean id="mysqlDataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
+        <property name="driverClassName" value="${pb-member-credit-api.jdbc.driver}"/>
+        <property name="url" value="${pb-member-credit-api.jdbc.url}"/>
+        <property name="username" value="${pb-member-credit-api.jdbc.username}"/>
+        <property name="password" value="${pb-member-credit-api.jdbc.password}"/>
+        <property name="initialSize" value="10"/>
+        <property name="minIdle" value="5"/>
+        <property name="maxActive" value="20"/>
+        <property name="timeBetweenEvictionRunsMillis" value="60000"/>
+        <property name="minEvictableIdleTimeMillis" value="300000"/>
+    </bean>
+</beans>

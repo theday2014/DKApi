@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--suppress SqlDialectInspection -->
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.danke.api.dao.CorpUserDao">
+    <resultMap id="BaseResultMap" type="com.danke.api.domain.CorpUser">
+        <result column="name" property="name" jdbcType="VARCHAR"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        name
+    </sql>
+    <select id="getCorpUsers" resultMap="BaseResultMap" parameterType="com.danke.api.domain.CorpUser">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM corp_users
+    </select>
+</mapper>
