@@ -107,12 +107,6 @@
             <version>${mybatis.spring.version}</version>
         </dependency>
         <dependency>
-            <groupId>com.elong.pb.common</groupId>
-            <artifactId>pb-common-test</artifactId>
-            <version>2.0.0.9-SNAPSHOT</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>${junit.version}</version>
