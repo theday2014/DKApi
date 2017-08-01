@@ -11,7 +11,7 @@ import java.util.List;
  * Created by wanghao on 2017/7/31.
  */
 @Service
-public class CorpUserService {
+public class  CorpUserService {
     @Resource
     private CorpUserDao corpUserDao;
     public List<CorpUser> getCorpUsers(){
